@@ -17,3 +17,11 @@ tray_config.json
 .idea/
 Thumbs.db
 desktop.ini
+
+# Tray app build/runtime artifacts
+node_modules/
+.venv/
+tray-app/build/
+tray-app/dist/
+runtime.json
+*.log

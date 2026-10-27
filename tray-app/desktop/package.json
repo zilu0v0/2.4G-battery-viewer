@@ -1,0 +1,57 @@
+{
+  "name": "lucky-battery",
+  "version": "2.3.0",
+  "private": true,
+  "description": "Personal wireless battery tray",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.js",
+    "dist": "electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "electron": "45.0.0",
+    "electron-builder": "26.18.0"
+  },
+  "author": "LuckyLu",
+  "build": {
+    "appId": "LuckyLu.Battery.Desktop",
+    "productName": "我的设备电量",
+    "electronVersion": "45.0.0",
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "../dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "geometry.js",
+      "assets/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../build/reader-dist/battery-reader",
+        "to": "reader"
+      },
+      {
+        "from": "../licenses",
+        "to": "licenses"
+      }
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "assets/app.ico",
+      "signExecutable": false
+    },
+    "portable": {
+      "artifactName": "我的设备电量.exe"
+    },
+    "compression": "normal"
+  }
+}

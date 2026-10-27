@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'">
+<title>我的设备电量</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="app-surface" id="surface">
+  <main>
+    <header class="flyout-header flyout-only"><div class="flyout-heading"><div class="brand-symbol">✳</div><div><h1>设备电量</h1><p id="flyout-time">正在连接设备…</p></div></div></header>
+    <p id="empty-state" role="status">正在检测设备…</p>
+    <section class="devices" id="devices" aria-label="设备电量"></section>
+    <footer class="flyout-footer flyout-only"><div class="flyout-hint"><span class="status-dot"></span><span id="flyout-summary">每 60 秒自动更新</span></div><button class="filled-button tactile refresh"><span class="refresh-symbol">↻</span><span class="refresh-label">刷新电量</span></button></footer>
+  </main>
+</div><script src="renderer.js"></script></body></html>
